@@ -1,0 +1,5 @@
+<%=form_for  @user do |u|  %>
+  name:<%=u.text_field :name  %>
+  age:<%=u.text_field :age %>
+  <%= u.submit %>
+<% end %>

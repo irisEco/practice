@@ -1,0 +1,5 @@
+<%= form_tag user_path(@user),method: :PATCH do  %>
+ name:<%= text_field_tag "user[name]",@user.name %><br>
+  age:<%= text_field_tag "user[age]",@user.age%><rb/>
+  <%= submit_tag  '提交' %>
+<% end %>

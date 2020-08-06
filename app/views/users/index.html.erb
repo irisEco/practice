@@ -1,0 +1,23 @@
+<%= form_tag("/users/search", method: "get") do %>
+  <%= label_tag(:info, "Search for:") %>
+  <%= text_field_tag(:info) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<%= link_to "新建", new_user_path %>
+<table>
+  <tr>
+    <td>name</td>
+    <td>age</td>
+    <td>setting</td>
+  </tr>
+  <% @user.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.age %></td>
+      <td><%= link_to "编辑", edit_user_path(user) %>
+        <%= link_to "删除", user, method: :delete,data:{confirm:"are you sure?"} %>
+        <%= link_to "详情", user %>
+      </td>
+    </tr>
+  <% end %>
+</table>
